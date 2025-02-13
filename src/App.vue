@@ -1,15 +1,12 @@
 <script setup lang="ts">
-import SlideOver from './components/Slideover.vue';
-import HomeView from './views/HomeView.vue';
+import SlideOver from './components/SlideOver.vue';
 </script>
 
 <template>
   <div class="container">
     <SlideOver />
     <main class="main">
-      <router-view>
-        <HomeView />
-      </router-view>
+      <RouterView />
     </main>
   </div>
 </template>
@@ -17,5 +14,10 @@ import HomeView from './views/HomeView.vue';
 <style scoped>
 .container {
   display: flex;
+}
+
+.main {
+  width: 100%;
+  padding: 20px;
 }
 </style>

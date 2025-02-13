@@ -3,12 +3,12 @@
 <template>
   <div id="slideover" class="slideover open">
     <div class="slideover-content">
-      <h1>Загрузка и анализ Excel файла</h1>
+      <router-link to="/"><h1>Загрузка и анализ Excel файла</h1></router-link>
       <nav>
         <ul class="nav-list">
-          <router-link to="/upload">Загрузить файл</router-link>
-          <router-link to="/table">Просмотр данных</router-link>
-          <router-link to="/about">О проекте</router-link>
+          <router-link class="router-link-nav" to="/upload">Загрузить файл</router-link>
+          <router-link class="router-link-nav" to="/table">Просмотр данных</router-link>
+          <router-link class="router-link-nav" to="/about">О проекте</router-link>
         </ul>
       </nav>
     </div>
@@ -40,7 +40,7 @@
 .slideover h1 {
   color: white;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 nav ul {
@@ -53,16 +53,25 @@ nav ul li {
   margin: 20px 0;
 }
 
-nav ul li a {
+.router-link-nav {
   color: white;
   font-size: 18px;
+  border: 1px solid white;
+  padding: 10px 0;
+  width: 200px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.router-link-nav:hover {
+  background-color: rgba(0, 224, 222, 0.6);
 }
 
 .nav-list {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  gap: 8px;
+  justify-content: left;
+  gap: 15px;
 }
 </style>

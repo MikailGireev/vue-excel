@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+</script>
 
 <template>
   <div id="slideover" class="slideover open">
@@ -6,9 +10,24 @@
       <router-link to="/"><h1>Загрузка и анализ Excel файла</h1></router-link>
       <nav>
         <ul class="nav-list">
-          <router-link class="router-link-nav" to="/upload">Загрузить файл</router-link>
-          <router-link class="router-link-nav" to="/table">Просмотр данных</router-link>
-          <router-link class="router-link-nav" to="/about">О проекте</router-link>
+          <router-link
+            class="router-link-nav"
+            :class="route.path === '/upload' ? 'router-link-active' : ''"
+            to="/upload"
+            >Загрузить файл</router-link
+          >
+          <router-link
+            class="router-link-nav"
+            :class="route.path === '/table' ? 'router-link-active' : ''"
+            to="/table"
+            >Просмотр данных</router-link
+          >
+          <router-link
+            class="router-link-nav"
+            :class="route.path === '/about' ? 'router-link-active' : ''"
+            to="/about"
+            >О проекте</router-link
+          >
         </ul>
       </nav>
     </div>
@@ -64,6 +83,10 @@ nav ul li {
 }
 
 .router-link-nav:hover {
+  background-color: rgba(0, 224, 222, 0.6);
+}
+
+.router-link-active {
   background-color: rgba(0, 224, 222, 0.6);
 }
 
